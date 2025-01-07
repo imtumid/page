@@ -1,58 +1,73 @@
 <!doctype html>
 <html>
   <head>
-    <!-- meta setup -->
+    <!-- Page setup -->
     <meta charset="utf-8">
-    <title>chill site</title>
+    <title>epic site</title>
     <meta name="description" content="just vibes">
     <meta name="author" content="me (duh)">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <link rel="icon" type="image/png" href="favicon.png">
   
-    <!-- fonts and styles -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <!-- Stylesheets -->
+    <!-- Reset default styles and add support for Google Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+   
+    <!-- Custom styles -->
+    <link href="style.css" rel="stylesheet" type="text/css" />
 
-    <!-- scripts -->
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-oF8ZOD2zFEJJL2Gi4mJgMkQKQbXnB9DC0Tiw7OnJntn5rOhzn9jZdbZIfOsUuy2p" crossorigin="anonymous"></script>
   </head>
   
   <body>
+
     <header id="header">
-      <img src="logo.png" alt="logo" style="max-width: 50px;">
-      <h1>my chill site</h1>
-      <nav>
-        <ul class="main-menu">
-          <li><a href="#home">home</a></li>
-          <li><a href="#about">about</a></li>
-          <li><a href="#contact">contact</a></li>
-        </ul>
-      </nav>                 
+      <img src="logo.png" alt="logo">
+      <h1>epic site</h1>
+      
+      <ul class="main-menu">
+        <li><a href="#home">home</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#contact">contact</a></li>
+      </ul>                 
     </header>
    
-    <main id="container">
-      <div id="home" class="content-region">
-        <h2>home</h2>
-        <p>welcome to my site. it’s simple, just like me.</p>
+    <div id="container">
+      <div class="inner">
+        <div id="content"> 
+          
+          <div id="home" class="content-region hide">
+            <h2>Home</h2>
+            <p>
+              welcome to my site. it’s simple, just like me.
+            </p>
+          </div>
+          
+          <div id="about" class="content-region hide">
+            <h2>About</h2>
+            <p>
+              this site is just a little project i’m playing with. nothing fancy.
+            </p>
+          </div>
+          
+          <div id="contact" class="content-region hide">
+            <h2>Contact</h2>
+            <p>
+              reach out to me at <a href="mailto:me@chillmail.com">me@chillmail.com</a>.
+            </p>
+          </div>
+          
+        </div>
       </div>
-      
-      <div id="about" class="content-region hide">
-        <h2>about</h2>
-        <p>this site is just a little project i’m playing with. nothing fancy.</p>
-      </div>
-      
-      <div id="contact" class="content-region hide">
-        <h2>contact</h2>
-        <p>reach out to me at <a href="mailto:me@chillmail.com">me@chillmail.com</a>.</p>
-      </div>
-    </main>
+    </div>
 
-    <footer>
-      <p>© 2025 me. all rights reserved (or whatever).</p>
+    <footer>  
+      Footer region
     </footer>
     
-    <!-- script to handle menu links -->
+    <!-- Load additional JS scripts here -->
     <script>
       $(document).ready(() => {
         $('.main-menu a').on('click', function(e) {
@@ -66,45 +81,35 @@
     
     <style>
       body {
-        font-family: 'Rubik', sans-serif;
+        font-family: 'Roboto', sans-serif;
         margin: 0;
-        color: #333;
         background-color: #f7f7f7;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
       }
-      header {
+      #header {
+        text-align: center;
         background: #333;
         color: #fff;
-        width: 100%;
-        padding: 10px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+      }
+      #container {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
       }
       .main-menu {
         list-style: none;
-        margin: 0;
         padding: 0;
         display: flex;
+        justify-content: center;
         gap: 15px;
       }
       .main-menu a {
         color: #fff;
         text-decoration: none;
-        font-weight: 500;
-      }
-      #container {
-        text-align: center;
-        max-width: 600px;
-        padding: 20px;
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       }
       .content-region {
         display: none;
@@ -112,14 +117,7 @@
       .content-region:not(.hide) {
         display: block;
       }
-      footer {
-        text-align: center;
-        padding: 10px 0;
-        background: #333;
-        color: #fff;
-        width: 100%;
-        margin-top: 20px;
-      }
     </style>
+    
   </body>
 </html>
