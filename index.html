@@ -20,6 +20,38 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
 
+    <style>
+      /* Additional styles for the buttons */
+      .button-container {
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 0;
+      }
+      
+      .image-button {
+        width: 100px;
+        height: 100px;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .image-button:hover {
+        border-color: white;
+      }
+
+      .image-button img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    </style>
   </head>
   
   <body>
@@ -56,9 +88,20 @@
           
           <div id="contact" class="content-region hide">
             <h2>Contact</h2>
-            <p>
-              reach out to me at <a href="mailto:me@chillmail.com">me@chillmail.com</a>.
-            </p>
+            <div class="button-container">
+              <div class="image-button">
+                <img src="image1.png" alt="Button 1">
+              </div>
+              <div class="image-button">
+                <img src="image2.png" alt="Button 2">
+              </div>
+              <div class="image-button">
+                <img src="image3.png" alt="Button 3">
+              </div>
+              <div class="image-button">
+                <img src="image4.png" alt="Button 4">
+              </div>
+            </div>
           </div>
           
         </div>
