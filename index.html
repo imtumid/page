@@ -1,79 +1,111 @@
 <!doctype html>
 <html>
   <head>
-    <!-- Page setup -->
+    <!-- meta setup -->
     <meta charset="utf-8">
-    <title>epic site</title>
-    <meta name="description" content="yes">
-    <meta name="author" content="Information about the author here">
+    <title>chill site</title>
+    <meta name="description" content="just vibes">
+    <meta name="author" content="me (duh)">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <link rel="icon" type="image/png" href="favicon.png">
   
-    <!-- Stylesheets -->
-    <!-- Reset default styles and add support for google fonts -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
-   
-    <!-- Custom styles -->
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <!-- fonts and styles -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
-
-    <!-- Want to add Bootstrap? -->
-    <!-- Visit: https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
-    
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-oF8ZOD2zFEJJL2Gi4mJgMkQKQbXnB9DC0Tiw7OnJntn5rOhzn9jZdbZIfOsUuy2p" crossorigin="anonymous"></script>
   </head>
   
   <body>
-
     <header id="header">
-      <img src="logo.png">
-      <h1>Simple Website</h1>
-      
-      <!-- Menu link fragment #id should match a div id. Example: <a href="#home"> links to <div id="home"></div>  -->
-      <ul class="main-menu">
-        <li><a href="#home">home</a></li>
-        <li><a href="#about">about</a></li>
-        <li><a href="#contact">contact</a></li>
-      </ul>                 
+      <img src="logo.png" alt="logo" style="max-width: 50px;">
+      <h1>my chill site</h1>
+      <nav>
+        <ul class="main-menu">
+          <li><a href="#home">home</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
+      </nav>                 
     </header>
    
-    <div id="container">
-      <div class="inner">
-        <div id="content"> 
-          
-          <div id="home" class="content-region hide">
-            <h2>Home</h2>
-            <p>
-              This is a simple website template published with Github Pages. <a href="https://github.com/zirafa/simple-website-template">Fork this repository</a> to create your own site!
-            </p>
-          </div>
-          
-          <div id="about" class="content-region hide">
-            <h2>About</h2>
-            <p>
-              Sed tempus urna et pharetra pharetra massa massa ultricies. Porttitor rhoncus dolor purus non enim praesent. Id aliquet risus feugiat in ante metus dictum. 
-            </p>
-          </div>
-          
-          <div id="contact" class="content-region hide">
-            <h2>Contact</h2>
-            <p>
-              Pellentesque nec nam aliquam sem et tortor consequat. Quisque sagittis purus sit amet volutpat consequat. Magna eget est lorem ipsum dolor. 
-            </p>
-          </div>
-          
-        </div>
+    <main id="container">
+      <div id="home" class="content-region">
+        <h2>home</h2>
+        <p>welcome to my site. it’s simple, just like me.</p>
       </div>
-    </div>
+      
+      <div id="about" class="content-region hide">
+        <h2>about</h2>
+        <p>this site is just a little project i’m playing with. nothing fancy.</p>
+      </div>
+      
+      <div id="contact" class="content-region hide">
+        <h2>contact</h2>
+        <p>reach out to me at <a href="mailto:me@chillmail.com">me@chillmail.com</a>.</p>
+      </div>
+    </main>
 
-    <footer>  
-      Footer region
+    <footer>
+      <p>© 2025 me. all rights reserved (or whatever).</p>
     </footer>
     
-    <!-- Load additional JS scripts here -->
-    <script type="text/javascript" src="script.js"></script>
+    <!-- script to handle menu links -->
+    <script>
+      $(document).ready(() => {
+        $('.main-menu a').on('click', function(e) {
+          e.preventDefault();
+          $('.content-region').addClass('hide');
+          $($(this).attr('href')).removeClass('hide');
+        });
+      });
+    </script>
     
+    <style>
+      body {
+        font-family: 'Rubik', sans-serif;
+        margin: 0;
+        color: #333;
+        background-color: #f7f7f7;
+      }
+      h1, h2 {
+        text-align: center;
+        margin: 20px 0;
+      }
+      header {
+        background: #333;
+        color: #fff;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .main-menu {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 15px;
+      }
+      .main-menu a {
+        color: #fff;
+        text-decoration: none;
+      }
+      #container {
+        padding: 20px;
+      }
+      .hide {
+        display: none;
+      }
+      footer {
+        text-align: center;
+        padding: 10px 0;
+        background: #333;
+        color: #fff;
+        margin-top: 20px;
+      }
+    </style>
   </body>
 </html>
